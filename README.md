@@ -1,4 +1,4 @@
-# ssm-agent-daemonset
+# node-configuration-daemonset
 
 This project shows how you can install the SSM agent onto EKS worker nodes using a Kubernetes DaemonSet.  This method for configuring the nodes can be used to customize workers in an EKS Managed Node Group (MNG) after they've been deployed, at least until launch templates are supported.  This project was heavily inspired by Shekhar Patnaik's [AKS Node Installer Project](https://github.com/patnaikshekhar/AKSNodeInstaller).  
 
