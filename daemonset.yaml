@@ -13,8 +13,8 @@ spec:
     spec:
       hostPID: true
       restartPolicy: Always
-      containers:
-      - image: jicowan/ssm-agent-installer:1.0
+      initContainers:
+      - image: jicowan/ssm-agent-installer:1.1
         name: ssm-agent-installer
         securityContext:
           privileged: true
@@ -30,3 +30,10 @@ spec:
       - name: host-mount
         hostPath:
           path: /tmp/install
+      containers:
+      - image: "gcr.io/google-containers/pause:2.0"
+        name: pause
+        securityContext:  
+          allowPrivilegeEscalation: false  
+          runAsUser: 1000  
+          readOnlyRootFilesystem: true
